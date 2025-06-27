@@ -23,4 +23,9 @@ class Mobil extends Model
     {
         return $this->belongsTo(Po::class);
     }
+
+    public function perjalanan()
+    {
+        return $this->hasMany(Perjalanan::class);
+    }
 }

@@ -8,6 +8,7 @@ use Filament\PanelProvider;
 use Filament\Pages\Dashboard;
 use Filament\Support\Colors\Color;
 use Filament\Widgets\AccountWidget;
+use Filament\Navigation\NavigationGroup;
 use Filament\Widgets\FilamentInfoWidget;
 use App\Filament\Pages\Tenancy\RegisterPo;
 use Filament\Http\Middleware\Authenticate;

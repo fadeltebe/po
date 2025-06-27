@@ -29,4 +29,9 @@ class Rute extends Model
     {
         return $this->belongsTo(Lokasi::class, 'lokasi_tujuan_id');
     }
+
+    public function perjalanan()
+    {
+        return $this->hasMany(Perjalanan::class);
+    }
 }

@@ -23,6 +23,9 @@ class DatabaseSeeder extends Seeder
         // Panggil PaketSeeder
         $this->call([
             PaketSeeder::class,
+            POSeeder::class,
+            DriverSeeder::class,
+            PerjalananSeeder::class,
         ]);
     }
 }

@@ -22,4 +22,19 @@ class PO extends Model
     {
         return $this->belongsTo(Paket::class);
     }
+
+    public function lokasi()
+    {
+        return $this->hasMany(Lokasi::class);
+    }
+
+    public function mobil()
+    {
+        return $this->hasMany(Mobil::class);
+    }
+
+    public function rute()
+    {
+        return $this->hasMany(Rute::class);
+    }
 }
