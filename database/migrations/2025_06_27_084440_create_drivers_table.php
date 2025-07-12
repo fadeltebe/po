@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('drivers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('po_id')->constrained('pos')->onDelete('cascade');
+            $table->foreignId('travel_id')->constrained('travels')->onDelete('cascade');
             $table->string('nama');
             $table->string('nomor_hp');
             $table->string('sim')->nullable(); // nomor SIM

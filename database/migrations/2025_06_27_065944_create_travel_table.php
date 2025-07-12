@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pos', function (Blueprint $table) {
+        Schema::create('travels', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('slug')->unique()->nullable();
@@ -25,10 +25,10 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('po_user', function (Blueprint $table) {
+        Schema::create('travel_user', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('pos_id');
-            $table->foreign('pos_id')->references('id')->on('pos')->onDelete('cascade');
+            $table->unsignedBigInteger('travel_id');
+            $table->foreign('travel_id')->references('id')->on('travels')->onDelete('cascade');
 
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
@@ -43,13 +43,13 @@ return new class extends Migration
     public function down(): void
     {
         // Drop foreign keys first (optional but safe)
-        Schema::table('po_user', function (Blueprint $table) {
-            $table->dropForeign(['pos_id']);
+        Schema::table('travel_user', function (Blueprint $table) {
+            $table->dropForeign(['travel_id']);
             $table->dropForeign(['user_id']);
         });
 
         // Drop child table first
-        Schema::dropIfExists('po_user');
-        Schema::dropIfExists('pos');
+        Schema::dropIfExists('travel_user');
+        Schema::dropIfExists('travels');
     }
 };

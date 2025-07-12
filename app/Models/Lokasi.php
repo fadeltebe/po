@@ -8,13 +8,13 @@ class Lokasi extends Model
 {
     protected $fillable = [
         'nama',
-        'po_id',
+        'travel_id',
         'user_id',
     ];
 
-    public function po()
+    public function travel()
     {
-        return $this->belongsTo(Po::class);
+        return $this->belongsTo(Travel::class);
     }
 
     public function user()

@@ -3,14 +3,14 @@
 namespace Database\Seeders;
 
 use App\Models\Driver;
-use App\Models\PO;
+use App\Models\Travel;
 use Illuminate\Database\Seeder;
 
 class DriverSeeder extends Seeder
 {
     public function run(): void
     {
-        $po = PO::first();
+        $travel = Travel::first();
 
         $drivers = [
             [
@@ -36,7 +36,7 @@ class DriverSeeder extends Seeder
         foreach ($drivers as $data) {
             Driver::create([
                 ...$data,
-                'po_id' => $po->id,
+                'travel_id' => $travel->id,
                 'status' => 'aktif',
             ]);
         }

@@ -2,7 +2,6 @@
 
 namespace App\Providers\Filament;
 
-use App\Models\PO;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Pages\Dashboard;
@@ -10,7 +9,8 @@ use Filament\Support\Colors\Color;
 use Filament\Widgets\AccountWidget;
 use Filament\Navigation\NavigationGroup;
 use Filament\Widgets\FilamentInfoWidget;
-use App\Filament\Pages\Tenancy\RegisterPo;
+use App\Filament\Pages\Tenancy\RegisterTravel;
+use App\Models\Travel;
 use Filament\Http\Middleware\Authenticate;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -58,8 +58,8 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])
-            ->tenant(PO::class)
-            ->tenantRegistration(RegisterPo::class)
+            ->tenant(Travel::class)
+            ->tenantRegistration(RegisterTravel::class)
         ;
     }
 }

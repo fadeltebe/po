@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('rutes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('po_id')->constrained('pos')->onDelete('cascade');
+            $table->foreignId('travel_id')->constrained('travels')->onDelete('cascade');
             $table->foreignId('lokasi_asal_id')->constrained('lokasis')->onDelete('cascade');
             $table->foreignId('lokasi_tujuan_id')->constrained('lokasis')->onDelete('cascade');
             $table->integer('jarak_km')->nullable();

@@ -44,7 +44,7 @@ class PerjalananResource extends Resource
         return [
             'index' => ListPerjalanans::route('/'),
             'create' => CreatePerjalanan::route('/create'),
-            'edit' => EditPerjalanan::route('/{record}/edit'),
+            // 'edit' => EditPerjalanan::route('/{record}/edit'),
         ];
     }
 }

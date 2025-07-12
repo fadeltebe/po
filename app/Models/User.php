@@ -52,19 +52,19 @@ class User extends Authenticatable implements FilamentUser, HasTenants
         ];
     }
 
-    public function pos()
+    public function travels()
     {
-        return $this->belongsToMany(PO::class, 'po_user', 'user_id', 'pos_id');
+        return $this->belongsToMany(Travel::class, 'travel_user', 'user_id', 'travel_id');
     }
 
     public function getTenants(Panel $panel): Collection
     {
-        return $this->pos;
+        return $this->travels;
     }
 
     public function canAccessTenant(Model $tenant): bool
     {
-        return $this->pos()->whereKey($tenant)->exists();
+        return $this->travels()->whereKey($tenant)->exists();
     }
 
     public function canAccessPanel(Panel $panel): bool

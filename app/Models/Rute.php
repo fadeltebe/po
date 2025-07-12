@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Rute extends Model
 {
     protected $fillable = [
-        'po_id',
+        'travel_id',
         'lokasi_asal_id',
         'lokasi_tujuan_id',
         'jarak_km',
@@ -15,9 +15,9 @@ class Rute extends Model
         'harga_default',
     ];
 
-    public function po()
+    public function travel()
     {
-        return $this->belongsTo(PO::class);
+        return $this->belongsTo(Travel::class);
     }
 
     public function lokasiAsal()

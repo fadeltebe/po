@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Mobil extends Model
 {
     protected $fillable = [
-        'po_id',
+        'travel_id',
         'plat_nomor',
         'merk',
         'tipe',
@@ -19,9 +19,9 @@ class Mobil extends Model
         'status',
     ];
 
-    public function po()
+    public function travel()
     {
-        return $this->belongsTo(Po::class);
+        return $this->belongsTo(Travel::class);
     }
 
     public function perjalanan()

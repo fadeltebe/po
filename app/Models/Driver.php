@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Driver extends Model
 {
-    protected $fillable = ['po_id', 'nama', 'nomor_hp', 'sim', 'alamat', 'status'];
+    protected $fillable = ['travel_id', 'nama', 'nomor_hp', 'sim', 'alamat', 'status'];
 
-    public function po()
+    public function travel()
     {
-        return $this->belongsTo(PO::class);
+        return $this->belongsTo(Travel::class);
     }
 
     public function perjalanan()

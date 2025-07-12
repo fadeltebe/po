@@ -7,15 +7,15 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
-class POSeeder extends Seeder
+class TravelSeeder extends Seeder
 {
     public function run(): void
     {
         // Ambil salah satu paket
         $paket = DB::table('pakets')->where('nama', 'Trial')->first();
 
-        // 1. Buat PO
-        $poId = DB::table('pos')->insertGetId([
+        // 1. Buat travel
+        $travelId = DB::table('travels')->insertGetId([
             'name' => 'P.O Kesayangan Anda',
             'slug' => 'kesayangan-anda',
             'owner_nama' => 'Pak Haji Ramli',
@@ -46,7 +46,7 @@ class POSeeder extends Seeder
         // 3. Lokasi: Palu dan Ampana
         $lokasiPalu = DB::table('lokasis')->insertGetId([
             'nama' => 'Palu',
-            'po_id' => $poId,
+            'travel_id' => $travelId,
             'user_id' => $adminPalu->id,
             'created_at' => now(),
             'updated_at' => now(),
@@ -54,7 +54,7 @@ class POSeeder extends Seeder
 
         $lokasiAmpana = DB::table('lokasis')->insertGetId([
             'nama' => 'Ampana',
-            'po_id' => $poId,
+            'travel_id' => $travelId,
             'user_id' => $adminAmpana->id,
             'created_at' => now(),
             'updated_at' => now(),
@@ -69,7 +69,7 @@ class POSeeder extends Seeder
 
         $lokasiLuwuk = DB::table('lokasis')->insertGetId([
             'nama' => 'Luwuk',
-            'po_id' => $poId,
+            'travel_id' => $travelId,
             'user_id' => $adminLuwuk->id,
             'created_at' => now(),
             'updated_at' => now(),
@@ -78,7 +78,7 @@ class POSeeder extends Seeder
         // 4. Tambah 3 mobil
         foreach (['DN1234AA', 'DN5678BB', 'DN9999CC'] as $index => $plat) {
             DB::table('mobils')->insert([
-                'po_id' => $poId,
+                'travel_id' => $travelId,
                 'plat_nomor' => $plat,
                 'merk' => 'Toyota',
                 'tipe' => 'Hiace',
@@ -96,7 +96,7 @@ class POSeeder extends Seeder
         // 5. Tambah 4 rute: Palu-Ampana PP, Palu-Luwuk PP
         DB::table('rutes')->insert([
             [
-                'po_id' => $poId,
+                'travel_id' => $travelId,
                 'lokasi_asal_id' => $lokasiPalu,
                 'lokasi_tujuan_id' => $lokasiAmpana,
                 'jarak_km' => 350,
@@ -106,7 +106,7 @@ class POSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'po_id' => $poId,
+                'travel_id' => $travelId,
                 'lokasi_asal_id' => $lokasiAmpana,
                 'lokasi_tujuan_id' => $lokasiPalu,
                 'jarak_km' => 350,
@@ -116,7 +116,7 @@ class POSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'po_id' => $poId,
+                'travel_id' => $travelId,
                 'lokasi_asal_id' => $lokasiPalu,
                 'lokasi_tujuan_id' => $lokasiLuwuk,
                 'jarak_km' => 600,
@@ -126,7 +126,7 @@ class POSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'po_id' => $poId,
+                'travel_id' => $travelId,
                 'lokasi_asal_id' => $lokasiLuwuk,
                 'lokasi_tujuan_id' => $lokasiPalu,
                 'jarak_km' => 600,
