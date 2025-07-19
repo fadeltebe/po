@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('rutes', function (Blueprint $table) {
             $table->id();
             $table->foreignId('travel_id')->constrained('travels')->onDelete('cascade');
-            $table->foreignId('lokasi_asal_id')->constrained('lokasis')->onDelete('cascade');
-            $table->foreignId('lokasi_tujuan_id')->constrained('lokasis')->onDelete('cascade');
+            $table->foreignId('lokasi_asal_id')->constrained('agens')->onDelete('cascade');
+            $table->foreignId('lokasi_tujuan_id')->constrained('agens')->onDelete('cascade');
             $table->integer('jarak_km')->nullable();
             $table->float('estimasi_jam')->nullable();
             $table->integer('harga_default')->nullable();

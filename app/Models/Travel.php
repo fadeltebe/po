@@ -41,9 +41,14 @@ class Travel extends Model
         });
     }
 
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
     public function members(): BelongsToMany
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class, 'travel_user', 'travel_id', 'user_id');
     }
 
     public function paket()
@@ -51,9 +56,9 @@ class Travel extends Model
         return $this->belongsTo(Paket::class);
     }
 
-    public function lokasi()
+    public function agen()
     {
-        return $this->hasMany(Lokasi::class);
+        return $this->hasMany(Agen::class);
     }
 
     public function mobil()

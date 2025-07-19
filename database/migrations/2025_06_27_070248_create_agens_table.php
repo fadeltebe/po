@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('lokasis', function (Blueprint $table) {
+        Schema::create('agens', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
             $table->foreignId('travel_id')->constrained('travels')->onDelete('cascade');
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->string('alamat');
+            $table->string('nomor_hp');
+            $table->enum('status', ['aktif', 'nonaktif'])->default('aktif');
             $table->timestamps();
         });
     }
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('lokasis');
+        Schema::dropIfExists('agens');
     }
 };

@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Admin\Resources\Lokasis\Pages;
+namespace App\Filament\Admin\Resources\Agens\Pages;
 
-use App\Filament\Admin\Resources\Lokasis\LokasiResource;
+use App\Filament\Admin\Resources\Agens\AgenResource;
 use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
 
-class EditLokasi extends EditRecord
+class EditAgen extends EditRecord
 {
-    protected static string $resource = LokasiResource::class;
+    protected static string $resource = AgenResource::class;
 
     protected function getHeaderActions(): array
     {
