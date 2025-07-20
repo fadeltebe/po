@@ -22,12 +22,12 @@ class Rute extends Model
 
     public function lokasiAsal()
     {
-        return $this->belongsTo(Lokasi::class, 'lokasi_asal_id');
+        return $this->belongsTo(Agen::class, 'lokasi_asal_id');
     }
 
     public function lokasiTujuan()
     {
-        return $this->belongsTo(Lokasi::class, 'lokasi_tujuan_id');
+        return $this->belongsTo(Agen::class, 'lokasi_tujuan_id');
     }
 
     public function perjalanan()

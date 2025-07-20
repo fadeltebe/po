@@ -23,18 +23,18 @@ class PerjalananForm
                 select::make('driver_id')
                     ->relationship('driver', 'nama')
                     ->required(),
-                Select::make('rute_id')
-                    ->label('Rute')
-                    ->options(function () {
-                        $lokasiId = \App\Models\Lokasi::where('user_id', auth()->id())->value('id');
+                TextInput::make('rute_id')
+                    // ->label('Rute')
+                    // ->options(function () {
+                    //     $agenId = \App\Models\Agen::where('user_id', auth()->id())->value('id');
 
-                        return Rute::where('lokasi_asal_id', $lokasiId)
-                            ->with(['lokasiAsal', 'lokasiTujuan'])
-                            ->get()
-                            ->mapWithKeys(function ($rute) {
-                                return [$rute->id => $rute->lokasiAsal->nama . ' → ' . $rute->lokasiTujuan->nama];
-                            });
-                    })
+                    //     return Rute::where('lokasi_asal_id', $agenId)
+                    //         ->with(['lokasiAsal', 'lokasiTujuan'])
+                    //         ->get()
+                    //         ->mapWithKeys(function ($rute) {
+                    //             return [$rute->id => $rute->lokasiAsal->nama . ' → ' . $rute->lokasiTujuan->nama];
+                    //         });
+                    // })
 
                     ->required(),
                 DatePicker::make('tanggal_berangkat')
