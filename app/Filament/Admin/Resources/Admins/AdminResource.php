@@ -18,6 +18,8 @@ class AdminResource extends Resource
 {
     protected static ?string $model = Admin::class;
 
+    protected static ?string $navigationLabel = 'Admin';
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     public static function form(Schema $schema): Schema

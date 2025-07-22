@@ -20,8 +20,12 @@ class UserForm
                     ->required(),
                 DateTimePicker::make('email_verified_at'),
                 TextInput::make('password')
+                    ->label('Password')
                     ->password()
-                    ->required(),
+                    ->dehydrated(fn($state) => filled($state)) // hanya simpan jika diisi
+                    ->required(fn(string $context): bool => $context === 'create') // hanya required saat create
+                    ->minLength(8)
+                    ->maxLength(255),
                 // Using CheckboxList Component
                 CheckboxList::make('roles')
                     ->relationship('roles', 'name')

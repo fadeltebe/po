@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Agen extends Model
 {
     protected $fillable = [
-        'lokasi',
+        'nama',
         'travel_id',
         'alamat',
-        'kontak',
+        'nomor_hp',
         'status'
     ];
 

@@ -70,6 +70,21 @@ class User extends Authenticatable implements FilamentUser, HasTenants
 
     public function canAccessPanel(Panel $panel): bool
     {
+        // if ($panel->getId() === 'superadmin') {
+        //     return is_superadmin();
+        // } elseif ($panel->getId() === 'admin') {
+        //     return true; // Admin atau Owner bisa akses panel admin
+        // }
         return true;
+    }
+
+    public function admin()
+    {
+        return $this->hasOne(Admin::class);
+    }
+
+    public function isAdminAgen(): bool
+    {
+        return $this->hasRole('Admin Agen') && $this->admin?->agen_id;
     }
 }
