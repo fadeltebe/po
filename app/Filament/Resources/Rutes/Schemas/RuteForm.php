@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Admin\Resources\Rutes\Schemas;
+namespace App\Filament\Resources\Rutes\Schemas;
 
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;

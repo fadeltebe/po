@@ -14,10 +14,10 @@ class RutesTable
     {
         return $table
             ->columns([
-                TextColumn::make('lokasiAsal.nama')
+                TextColumn::make('lokasiasal.nama')
                     ->numeric()
                     ->sortable(),
-                TextColumn::make('lokasiTujuan.nama')
+                TextColumn::make('lokasitujuan.nama')
                     ->numeric()
                     ->sortable(),
                 TextColumn::make('jarak_km')

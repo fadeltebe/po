@@ -18,6 +18,27 @@ class Perjalanan extends Model
         'status'
     ];
 
+    protected static function booted()
+    {
+        static::updating(function ($perjalanan) {
+            // Jika status diubah ke "Tiba"
+            if (
+                $perjalanan->isDirty('status') &&
+                strtolower($perjalanan->status) === 'tiba'
+            ) {
+                // Hanya update jika tanggal/jam tiba belum ada
+                if (is_null($perjalanan->tanggal_tiba)) {
+                    $perjalanan->tanggal_tiba = now()->toDateString(); // tanggal hari ini
+                }
+
+                if (is_null($perjalanan->jam_tiba)) {
+                    $perjalanan->jam_tiba = now()->format('H:i:s'); // jam sekarang
+                }
+            }
+        });
+    }
+
+
     public function travel()
     {
         return $this->belongsTo(Travel::class);
