@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9db0680785c77a55f722fa3520eef151",
+    "content-hash": "95fd2dcf91d1319cf755e1641cb56879",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -3370,6 +3370,71 @@
                 }
             ],
             "time": "2025-04-12T22:26:52+00:00"
+        },
+        {
+            "name": "malzariey/filament-daterangepicker-filter",
+            "version": "4.0.3-beta",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/malzariey/filament-daterangepicker-filter.git",
+                "reference": "3421df4889e4a3c5e4ae2715fa62e8bdda86602a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/malzariey/filament-daterangepicker-filter/zipball/3421df4889e4a3c5e4ae2715fa62e8bdda86602a",
+                "reference": "3421df4889e4a3c5e4ae2715fa62e8bdda86602a",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^3.0|^4.0",
+                "illuminate/contracts": "^8.0|^9.0|^10.0|^11.0|^11.0|^12.0",
+                "spatie/laravel-package-tools": "^1.16.4"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "FilamentDaterangepickerFilter": "Malzariey\\FilamentDaterangepickerFilter\\Facades\\FilamentDaterangepickerFilter"
+                    },
+                    "providers": [
+                        "Malzariey\\FilamentDaterangepickerFilter\\FilamentDaterangepickerFilterServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Malzariey\\FilamentDaterangepickerFilter\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Majid Al-Zariey",
+                    "email": "malzariey@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "This package uses daterangepciker library to filter date by a range or predefined date ranges (Today , Yesterday ...etc)",
+            "homepage": "https://github.com/malzariey/filament-daterangepicker-filter",
+            "keywords": [
+                "Malzariey",
+                "filament-daterangepicker-filter",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/malzariey/filament-daterangepicker-filter/issues",
+                "source": "https://github.com/malzariey/filament-daterangepicker-filter/tree/4.0.3-beta"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/Malzariey",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-06-30T09:46:59+00:00"
         },
         {
             "name": "masterminds/html5",
@@ -10605,7 +10670,9 @@
     ],
     "aliases": [],
     "minimum-stability": "beta",
-    "stability-flags": [],
+    "stability-flags": {
+        "bezhansalleh/filament-shield": 10
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

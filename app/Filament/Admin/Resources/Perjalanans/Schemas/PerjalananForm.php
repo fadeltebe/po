@@ -70,8 +70,7 @@ class PerjalananForm
                     ])->inline()
 
                     ->default('Dijadwalkan')
-                    ->required()
-                    ->grouped(),
+                    ->required(),
             ]);
     }
 }
